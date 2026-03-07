@@ -229,12 +229,45 @@ public class App {
                     break;
             case 2:
                 //Estadisticas detalladas. 
+                System.out.println("============================");
+                System.out.println("Estadisticas detalladas.");
+                System.out.println("============================");
+
+                System.out.println("Nombre del vendedor " + nombreVendedor);
+                System.out.println("Cargo " + cargo);
+                System.out.println("Salario base " + salarioBase);
+                System.out.println("---Rendimiento---");
+                System.out.println("Ventas realizadas " + ventasRealizadas);
+                System.out.println("Clientes atendidos " + clientesAtendidos);
+                System.out.println("Total vendido " + totalVendido);
+                System.out.println("Meta mensual " + metaMensual);
+
+                double porcentajeMeta = (totalVendido/metaMensual) * 100;
+
+                System.out.println("Cumplimiento " + porcentajeMeta + "%");
+
+                System.out.println("Comisiones ");
+                System.out.println("Comision acumulada " + comisionTotal);
+
+                // promedio de ventas
+
+                double promedioVenta = (ventasRealizadas > 0 ) ? totalVendido / ventasRealizadas : 0;
+                System.out.println("Promedio de venta " + promedioVenta);
+                System.out.println("Descuento otorgados " + descuentoOtorgado);
+                
+                //calificación del vendedor 
+                if (totalVendido >= metaMensual * 1.5) {
+                    System.out.println("Superaste la meta en un 150%");
+                } else if (totalVendido >= metaMensual) {
+                    System.out.println("Cumpliste con la meta");
+                } else if (totalVendido >= metaMensual * 0.7) {
+                    System.out.println("Buen trabajo, estas cerca de la meta.");
+                } else {
+                    System.out.println("No cumpliste la meta.");
+                }
+                break; //quede en 1 hora con 8 min 
+
             
-
-
-
-
-
             
                 default:
                     break;
